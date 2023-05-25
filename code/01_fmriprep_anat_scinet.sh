@@ -3,7 +3,7 @@
 #SBATCH --output=logs/%x_%j.out 
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=40
-#SBATCH --time=16:00:00
+#SBATCH --time=4:00:00
 
 
 SUB_SIZE=5 ## number of subjects to run
@@ -42,7 +42,7 @@ export SING_CONTAINER=${BASEDIR}/containers/fmriprep-20.1.1.simg
 export OUTPUT_DIR=${BASEDIR}/data/local/ # use if version of fmriprep <=20.1
 
 # export LOCAL_FREESURFER_DIR=${SCRATCH}/${STUDY}/data/derived/freesurfer-6.0.1
-export WORK_DIR=${BBUFFER}/SCanD/fmriprep
+export WORK_DIR=${BASEDIR}/Work/SCanD/fmriprep
 export LOGS_DIR=${BASEDIR}/logs
 mkdir -vp ${OUTPUT_DIR} ${WORK_DIR} # ${LOCAL_FREESURFER_DIR}
 
