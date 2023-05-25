@@ -2,12 +2,12 @@
 #SBATCH --job-name=fmriprep_anat
 #SBATCH --output=logs/%x_%j.out 
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=40
+#SBATCH --cpus-per-task=8
 #SBATCH --time=4:00:00
 
 
 SUB_SIZE=1 ## number of subjects to run
-CORES=40
+CORES=8
 export THREADS_PER_COMMAND=2
 
 ####----### the next bit only works IF this script is submitted from the $BASEDIR/$OPENNEURO_DS folder...
