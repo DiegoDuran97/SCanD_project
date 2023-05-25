@@ -6,7 +6,7 @@
 #SBATCH --time=4:00:00
 
 
-SUB_SIZE=5 ## number of subjects to run
+SUB_SIZE=1 ## number of subjects to run
 CORES=40
 export THREADS_PER_COMMAND=2
 
