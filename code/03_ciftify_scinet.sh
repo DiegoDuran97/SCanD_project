@@ -2,12 +2,12 @@
 #SBATCH --job-name=ciftify
 #SBATCH --output=logs/%x_%j.out 
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=40
-#SBATCH --time=12:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --time=4:00:00
 
 
-SUB_SIZE=8 ## number of subjects to run
-CORES=40
+SUB_SIZE=1 ## number of subjects to run
+CORES=8
 export THREADS_PER_COMMAND=2
 
 module load gnu-parallel/20191122
