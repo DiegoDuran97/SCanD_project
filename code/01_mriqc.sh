@@ -2,11 +2,11 @@
 #SBATCH --job-name=mriqc
 #SBATCH --output=logs/mriqc%x_%j.out 
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=80
-#SBATCH --time=12:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --time=4:00:00
 
 
-SUB_SIZE=10 ## number of subjects to run
+SUB_SIZE=1 ## number of subjects to run
 export THREADS_PER_COMMAND=2
 
 ####----### the next bit only works IF this script is submitted from the $BASEDIR/$OPENNEURO_DS folder...
@@ -69,7 +69,7 @@ singularity run --cleanenv \
     /bids /derived participant \
     --participant-label ${SUBJECTS} \
     -w /work \
-    --nprocs 12 \
+    --nprocs 8 \
     --ants-nthreads 8 \
     --verbose-reports \
     --ica \
